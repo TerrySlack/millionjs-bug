@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
+const million = require('million/compiler');
 const paths = require("./paths");
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
     new CleanWebpackPlugin(),
-
+    million.webpack(),
     // Copies files from target to destination folder
     new CopyWebpackPlugin({
       patterns: [

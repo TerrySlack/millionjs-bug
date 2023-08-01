@@ -1,18 +1,24 @@
-# WebPack-5-React-Typescript
+# Millionjs 
 
-Boiler plate React project Typescript, React Router, Storybook and Css modules enabled.
+Repo to demonstrate that millionjs generates an error when compiling the project to run
 
 # Setup
+This project uses yarn.
+To install, type the command yarn in a console, at the root of the project folder
 
-yarn or npm install
-At the time of this push, Storybook 7 just came out. There are numerous issues getting it to run, in a windows environment at least.
+# Issue(s)
+million is installed.  Currently 2.5.4-beta.0.  This issues is present as far back as s2.4.9
 
-try running yarn storybook. If it works, great. If not, run the following command. It
-will ensure that missing binaries are installed and will run any necessary updates in your package.json.
-npx storybook@next automigrate
+In config/webpack.base.js
+    import million into the file, using require, as per the docs.
 
-# Build
+    On line 24, million.webpack() is added 
 
-yarn run start or npm run start
+    in a console, run: yarn dev
+    You can then see the errors generated.
+    Even when attempting to push this to a repo, there are errors and I had to turn off  husky and lint-staged
 
-# Explanation
+# node
+I currently use node 20.0.0 and have also tried it on node 20.5.0
+
+I cannot downgrade node below 20.0.0.
